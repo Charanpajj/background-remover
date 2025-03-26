@@ -1,0 +1,18 @@
+from google.colab import files
+import matplotlib.pyplot as plt
+import cv2
+from rembg import remove
+from PIL import Image
+import numpy as np
+
+# Upload an image
+uploaded = files.upload()
+image_path = list(uploaded.keys())[0]
+image = cv2.imread(image_path)
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+plt.figure(figsize=(6, 6))
+plt.imshow(image_rgb)
+plt.title("Original Image")
+plt.axis("off")
+plt.show()
